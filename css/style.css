@@ -1,0 +1,75 @@
+.morningBG{
+background-image: url("../images/Morning.jpg");
+    
+min-height: 100%;
+width: auto;
+
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+.noonBG{
+    background-image: url("../images/Noon.png");
+        
+    min-height: 100%;
+    width: auto;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
+.eveningBG{
+    background:  url("../images/Evening.png");
+    
+    min-height: 100%;
+    width: auto;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.abs-center-x {
+    
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navSize{
+    height: 100px;
+    width: auto;
+}
+
+.usedBackGround{
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.fontBlack{
+    color: black;
+}
+
+.setFontSize35{
+    font-size: 35px;
+}
+.setFontSize45{
+    font-size: 45px;
+}
+.setFontSize60{
+ font-size: 60px;
+}
+.setFontSize70{
+    font-size: 70px;
+}
+.setFontSize90{
+    font-size: 90px;
+    
+}
+
+.plusMinusSizing{
+    height: 45px;
+    width: auto;
+}
+
+.arrowSize{
+    height: 45px;
+    width: auto;
+}
