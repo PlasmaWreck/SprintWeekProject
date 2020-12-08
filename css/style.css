@@ -1,3 +1,14 @@
+.dropDownIconSize{
+    height: 35px;
+    width: auto;
+}
+
+.rounding{
+    border-radius: 20px;
+}
+
+
+
 .morningBG{
 background-image: url("../images/Morning.jpg");
     
