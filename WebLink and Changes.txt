@@ -1,0 +1,6 @@
+WebLink: https://chandlerssprintweek2.azurewebsites.net/
+
+Changes:
+- Made some better alignment changes to the current day forcast
+- Adjusted the size of the 5 day forcasts.
+- Changed the favorates button and its size.
