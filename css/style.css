@@ -1,5 +1,14 @@
+ul {
+    list-style-type: none;
+}
+
 .dropDownIconSize{
     height: 35px;
+    width: auto;
+}
+
+.closeIconSize{
+    height: 25px;
     width: auto;
 }
 
@@ -62,7 +71,9 @@ background-size: cover;
 .fontBlack{
     color: black;
 }
-
+.setFontSize20{
+    font-size: 20px;
+}
 .setFontSize35{
     font-size: 35px;
 }

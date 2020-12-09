@@ -10,6 +10,10 @@ let currentCity = document.getElementById("currentCity");
 let mornArrow = document.getElementById("mornArrow");
 let nightArrow = document.getElementById("nightArrow");
 
+let addFavoriteButton = document.getElementById("addButton");
+let removeFavoriteButton = document.getElementById("minusButton");
+let favoritesList = document.getElementById("favoritesDropDown");
+
 
 
 
@@ -25,18 +29,75 @@ let currentMonth = 0;
 
 let searchCriteria = document.getElementById("searchCriteria");
 let tempName = "";
+let tempCountry = "";
 
+let amountFavorited = 0;
+let favoritedArray = [];
 
+addFavoriteButton.addEventListener("click", function () {
+    
+
+    if (amountFavorited <= 5) {
+        
+        favoritedArray[amountFavorited] = tempName + ", " + tempCountry;
+
+        localStorage.setItem("favorited", JSON.stringify(favoritedArray));
+
+        listPart = document.createElement("li");
+        listPart.setAttribute("id", "favoriteButton" + amountFavorited);
+        listPart.classList.add("d-flex", "flex-row", "mr-5");
+        listPart.innerHTML = "<p>" + tempName + ", " + tempCountry + "</p>";
+        favoritesList.appendChild(listPart);
+        amountFavorited++;
+    
+
+    } else {
+        console.log("memes3");
+    }
+
+    console.log(JSON.parse(localStorage.getItem("favorited")));
+    console.log(amountFavorited);
+});
+
+removeFavoriteButton.addEventListener("click", function () {
+
+    for(i = 0; i < JSON.parse(localStorage.getItem("favorited")).length; i++){
+        if(tempName + ", "+ tempCountry === JSON.parse(localStorage.getItem("favorited"))[i]){
+
+            favoritedArray.splice(i,1);
+
+            for(i = 0; i < JSON.parse(localStorage.getItem("favorited")).length; i++){
+                document.getElementById("favoriteButton" + i).remove();
+                if(amountFavorited > 0){
+                    amountFavorited--;
+                }
+            }
+
+            localStorage.setItem("favorited", JSON.stringify(favoritedArray));
+
+            initializeFavorates();
+
+            console.log(JSON.parse(localStorage.getItem("favorited")));
+
+        }
+
+        
+    }
+    console.log(amountFavorited);
+
+});
 
 
 
 let searchButton = document.getElementById("searchButton").addEventListener("click", function () {
+
     citySearch = searchCriteria.value;
     loadWeather(url_prt1 + citySearch + apiKey);
     searchCriteria.value = "";
 
 });
 searchCriteria.addEventListener("keypress", function (event) {
+
     if (event.key == "Enter") {
 
         event.preventDefault();
@@ -46,23 +107,58 @@ searchCriteria.addEventListener("keypress", function (event) {
     }
 });
 
+
+function initializeFavorates() {
+    
+    
+    if (JSON.parse(localStorage.getItem("favorited")) != null) {
+
+        favoritedArray = JSON.parse(localStorage.getItem("favorited"));
+        for (i = 0; i < JSON.parse(localStorage.getItem("favorited")).length; i++) {
+            listPart = document.createElement("li");
+            listPart.setAttribute("id", "favoriteButton" + i);
+            listPart.classList.add("d-flex", "flex-row", "mr-5");
+            listPart.innerHTML = "<p>" + JSON.parse(localStorage.getItem("favorited"))[i] + "</p>";
+            favoritesList.appendChild(listPart);
+            amountFavorited++;
+        }
+    }
+
+    if(amountFavorited <= 1){
+
+        let button0 = document.getElementById("favoriteButton0").addEventListener("click", function(){
+            console.log("eas");
+            loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[0] + apiKey);
+
+        });
+    }
+
+}
+
 function loadWeather(url) {
-    tempName = "";
+
     let weatherData = fetch(url).then(
         response => response.json()
     ).then(data => {
 
         //this is where you parse your data
+
         console.log(data);
-        if(data.name.length >= 10){
-            for(i = 0; i <= 10; i++){
+
+        if (data.name.length >= 10) {
+            tempName = "";
+            tempCountry = "";
+            for (i = 0; i <= 10; i++) {
                 tempName += data.name[i];
             }
             tempName = tempName + "[...]"
-        }else {
+        } else {
+            tempName = "";
+            tempCountry = "";
             tempName = data.name;
         }
-        currentCity.innerText = tempName + ", " + data.sys.country;
+        tempCountry = data.sys.country;
+        currentCity.innerText = tempName + ", " + tempCountry;
         loadWeatherOneCall(url_OneCall_prt1 + data.coord.lat + "&lon=" + data.coord.lon + apiKey);
 
     });
@@ -194,4 +290,5 @@ function loadDates() {
 //call the function
 
 loadWeather(url_prt1 + citySearch + apiKey);
+initializeFavorates()
 
