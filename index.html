@@ -56,11 +56,11 @@
     <div class="container-fluid px-5 py-4">
         <div class="row usedBackGround mb-4">
             <div class="col-7 mt-2 setFontSize45">
-                <p><em>Stockton,Ca</em></p>
+                <p id="currentCity" class="italizied"></p>
             </div>
 
             <div class="col-4 mt-2 setFontSize45 d-flex justify-content-end">
-                <p><em>Monday,December 7,2020</em></p>
+                <p id="currentDate" class="italizied"></p>
             </div>
 
             <div class="col-1 d-flex mt-3 justify-content-end">
@@ -76,8 +76,8 @@
                         <div class="col">
                             <div class="p-0 d-flex justify-content-end align-items-end">
 
-                                <img class="arrowSize mr-3" src="./images/downLeftArrow.png" alt="">
-                                <p class="setFontSize90 mb-n4">54°</p>
+                                <img class="arrowSize mr-3" src="" alt="WindDirection 2" id="mornArrow">
+                                <p class="setFontSize90 mb-n4" id="currentMornTemp">54°</p>
                                 <p class="m-0 setFontSize60">F</p>
 
                             </div>
@@ -95,12 +95,12 @@
 
             <div class="col-4 d-flex justify-content-center align-items-start">
                 <div>
-                    <p class="setFontSize70 mb-n4">Mostly Cloudy</p>
+                    <p class="setFontSize70 mb-n4" id="currentClouds">Mostly Cloudy</p>
                     <p class="setFontSize45 mr-5 m-0 d-flex justify-content-center"><em>Afternoon</em></p>
 
                     <div class="mt-n4 d-flex justify-content-center align-items-end">
 
-                        <p class="setFontSize90 mb-n1">76°</p>
+                        <p class="setFontSize90 mb-n1" id="currentNoonTemp">76°</p>
                         <p class="mb-2 setFontSize60">F</p>
 
                     </div>
@@ -117,9 +117,9 @@
                             <div class="p-0 d-flex justify-content-start align-items-end">
 
 
-                                <p class="setFontSize90 mb-n4">75°</p>
+                                <p class="setFontSize90 mb-n4" id="currentNightTemp">75°</p>
                                 <p class="m-0 setFontSize60">F</p>
-                                <img class="arrowSize ml-4" src="./images/upRightArrow.png" alt="">
+                                <img class="arrowSize ml-4" src="" alt="WindDirection 1" id="nightArrow">
 
                             </div>
 
