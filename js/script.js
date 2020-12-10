@@ -10,6 +10,41 @@ let currentCity = document.getElementById("currentCity");
 let mornArrow = document.getElementById("mornArrow");
 let nightArrow = document.getElementById("nightArrow");
 
+
+let secondDoW = document.getElementById("secondDoW");
+let secondDate = document.getElementById("secondDate");
+let secondMornTemp = document.getElementById("secondMornTemp");
+let secondNoonTemp = document.getElementById("secondNoonTemp");
+let secondNightTemp = document.getElementById("secondNightTemp");
+
+let thirdDoW = document.getElementById("thirdDoW");
+let thirdDate = document.getElementById("thirdDate");
+let thirdMornTemp = document.getElementById("thirdMornTemp");
+let thirdNoonTemp = document.getElementById("thirdNoonTemp");
+let thirdNightTemp = document.getElementById("thirdNightTemp");
+
+let fourthDoW = document.getElementById("fourthDoW");
+let fourthDate = document.getElementById("fourthDate");
+let fourthMornTemp = document.getElementById("fourthMornTemp");
+let fourthNoonTemp = document.getElementById("fourthNoonTemp");
+let fourthNightTemp = document.getElementById("fourthNightTemp");
+
+let fifthDoW = document.getElementById("fifthDoW");
+let fifthDate = document.getElementById("fifthDate");
+let fifthMornTemp = document.getElementById("fifthMornTemp");
+let fifthNoonTemp = document.getElementById("fifthNoonTemp");
+let fifthNightTemp = document.getElementById("fifthNightTemp");
+
+let sixthDoW = document.getElementById("sixthDoW");
+let sixthDate = document.getElementById("sixthDate");
+let sixthMornTemp = document.getElementById("sixthMornTemp");
+let sixthNoonTemp = document.getElementById("sixthNoonTemp");
+let sixthNightTemp = document.getElementById("sixthNightTemp");
+
+
+
+
+
 let addFavoriteButton = document.getElementById("addButton");
 let removeFavoriteButton = document.getElementById("minusButton");
 let favoritesList = document.getElementById("favoritesDropDown");
@@ -35,10 +70,10 @@ let amountFavorited = 0;
 let favoritedArray = [];
 
 addFavoriteButton.addEventListener("click", function () {
-    
+
 
     if (amountFavorited <= 5) {
-        
+
         favoritedArray[amountFavorited] = tempName + ", " + tempCountry;
 
         localStorage.setItem("favorited", JSON.stringify(favoritedArray));
@@ -49,26 +84,27 @@ addFavoriteButton.addEventListener("click", function () {
         listPart.innerHTML = "<p>" + tempName + ", " + tempCountry + "</p>";
         favoritesList.appendChild(listPart);
         amountFavorited++;
-    
+
 
     } else {
         console.log("memes3");
     }
 
+    initializeFavoriteDrop();
     console.log(JSON.parse(localStorage.getItem("favorited")));
     console.log(amountFavorited);
 });
 
 removeFavoriteButton.addEventListener("click", function () {
 
-    for(i = 0; i < JSON.parse(localStorage.getItem("favorited")).length; i++){
-        if(tempName + ", "+ tempCountry === JSON.parse(localStorage.getItem("favorited"))[i]){
+    for (i = 0; i < JSON.parse(localStorage.getItem("favorited")).length; i++) {
+        if (tempName + ", " + tempCountry === JSON.parse(localStorage.getItem("favorited"))[i]) {
 
-            favoritedArray.splice(i,1);
+            favoritedArray.splice(i, 1);
 
-            for(i = 0; i < JSON.parse(localStorage.getItem("favorited")).length; i++){
+            for (i = 0; i < JSON.parse(localStorage.getItem("favorited")).length; i++) {
                 document.getElementById("favoriteButton" + i).remove();
-                if(amountFavorited > 0){
+                if (amountFavorited > 0) {
                     amountFavorited--;
                 }
             }
@@ -79,12 +115,11 @@ removeFavoriteButton.addEventListener("click", function () {
 
             console.log(JSON.parse(localStorage.getItem("favorited")));
 
-        }
 
-        
+        }
     }
     console.log(amountFavorited);
-
+    initializeFavoriteDrop();
 });
 
 
@@ -109,11 +144,12 @@ searchCriteria.addEventListener("keypress", function (event) {
 
 
 function initializeFavorates() {
-    
-    
+
+
     if (JSON.parse(localStorage.getItem("favorited")) != null) {
 
         favoritedArray = JSON.parse(localStorage.getItem("favorited"));
+
         for (i = 0; i < JSON.parse(localStorage.getItem("favorited")).length; i++) {
             listPart = document.createElement("li");
             listPart.setAttribute("id", "favoriteButton" + i);
@@ -123,16 +159,59 @@ function initializeFavorates() {
             amountFavorited++;
         }
     }
+    initializeFavoriteDrop();
+}
 
-    if(amountFavorited <= 1){
+function initializeFavoriteDrop() {
 
-        let button0 = document.getElementById("favoriteButton0").addEventListener("click", function(){
+    if (amountFavorited >= 1) {
+
+        let button0 = document.getElementById("favoriteButton0").addEventListener("click", function () {
             console.log("eas");
             loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[0] + apiKey);
 
         });
     }
+    if (amountFavorited >= 2) {
 
+        let button0 = document.getElementById("favoriteButton1").addEventListener("click", function () {
+            console.log("eas");
+            loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[1] + apiKey);
+
+        });
+    }
+    if (amountFavorited >= 3) {
+
+        let button0 = document.getElementById("favoriteButton2").addEventListener("click", function () {
+            console.log("eas");
+            loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[2] + apiKey);
+
+        });
+    }
+    if (amountFavorited >= 4) {
+
+        let button0 = document.getElementById("favoriteButton3").addEventListener("click", function () {
+            console.log("eas");
+            loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[3] + apiKey);
+
+        });
+    }
+    if (amountFavorited >= 5) {
+
+        let button0 = document.getElementById("favoriteButton4").addEventListener("click", function () {
+            console.log("eas");
+            loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[4] + apiKey);
+
+        });
+    }
+    if (amountFavorited == 6) {
+
+        let button0 = document.getElementById("favoriteButton5").addEventListener("click", function () {
+            console.log("eas");
+            loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[5] + apiKey);
+
+        });
+    }
 }
 
 function loadWeather(url) {
@@ -180,11 +259,36 @@ function loadWeatherOneCall(url) {
         response => response.json()
     ).then(data => {
         //this is where you parse your data
+
         weatherInfo = data.daily;
+        console.log(weatherInfo);
         currentMornTemp.innerText = parseInt(weatherInfo[0].temp.morn) + "°";
         currentNoonTemp.innerText = parseInt(weatherInfo[0].temp.eve) + "°";
         currentNightTemp.innerText = parseInt(weatherInfo[0].temp.night) + "°";
+
+        secondMornTemp.innerText = parseInt(weatherInfo[1].temp.morn) + "°";
+        secondNoonTemp.innerText = parseInt(weatherInfo[1].temp.eve) + "°";
+        secondNightTemp.innerText = parseInt(weatherInfo[1].temp.night) + "°";
+
+        thirdMornTemp.innerText = parseInt(weatherInfo[2].temp.morn) + "°";
+        thirdNoonTemp.innerText = parseInt(weatherInfo[2].temp.eve) + "°";
+        thirdNightTemp.innerText = parseInt(weatherInfo[2].temp.night) + "°";
+
+        fourthMornTemp.innerText = parseInt(weatherInfo[3].temp.morn) + "°";
+        fourthNoonTemp.innerText = parseInt(weatherInfo[3].temp.eve) + "°";
+        fourthNightTemp.innerText = parseInt(weatherInfo[3].temp.night) + "°";
+
+        fifthMornTemp.innerText = parseInt(weatherInfo[4].temp.morn) + "°";
+        fifthNoonTemp.innerText = parseInt(weatherInfo[4].temp.eve) + "°";
+        fifthNightTemp.innerText = parseInt(weatherInfo[4].temp.night) + "°";
+
+        sixthMornTemp.innerText = parseInt(weatherInfo[5].temp.morn) + "°";
+        sixthNoonTemp.innerText = parseInt(weatherInfo[5].temp.eve) + "°";
+        sixthNightTemp.innerText = parseInt(weatherInfo[5].temp.night) + "°";
+
+
         loadDates();
+
         if (weatherInfo[0].clouds == 0) {
             currentClouds.innerText = "Clear Skies"
         } else if (weatherInfo[0].clouds <= 40) {
@@ -194,6 +298,7 @@ function loadWeatherOneCall(url) {
         } else if (weatherInfo[0].clouds == 100) {
             currentClouds.innerText = "OverCast"
         }
+
 
         if (weatherInfo[0].wind_deg >= 0 && weatherInfo[0].wind_deg < 90) {
             mornArrow.src = "./images/downLeftArrow.png";
@@ -214,81 +319,170 @@ function loadWeatherOneCall(url) {
 
 }
 
-function getDoW() {
 
-    switch (today.getDay()) {
-        case 1:
-            return "Monday"
-
-        case 2:
-            return "Tuesday"
-
-        case 3:
-            return "Wednesday"
-
-        case 4:
-            return "Tuesday"
-
-        case 5:
-            return "Friday"
-
-        case 6:
-            return "Saturday"
-
-        case 1:
-            return "Sunday"
-    }
-
-}
 function loadDates() {
-
-    switch (today.getMonth) {
+    switch (1) {
+        case 0:
+            applyDates("January", 31);            
+            break;
         case 1:
-            currentDate.innerText = getDoW() + ", January, " + today.getDate() + ", " + today.getFullYear();
+            if((today.getFullYear() % 4 == 0) && (today.getFullYear() % 100 != 0) || today.getFullYear() % 400 == 0){
+
+                applyDates("Febuary", 29);
+
+            }else{
+
+                applyDates("Febuary", 28);
+
+            }
             break;
         case 2:
-            currentDate.innerText = getDoW() + ", February, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("March", 31);
             break;
         case 3:
-            currentDate.innerText = getDoW() + ", March, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("April", 30);
             break;
         case 4:
-            currentDate.innerText = getDoW() + ", April, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("May", 31);
             break;
         case 5:
-            currentDate.innerText = getDoW() + ", May, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("June", 30);
             break;
         case 6:
-            currentDate.innerText = getDoW() + ", June, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("July", 31);
             break;
         case 7:
-            currentDate.innerText = getDoW() + ", July, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("August", 31);
             break;
         case 8:
-            currentDate.innerText = getDoW() + ", August, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("September", 30);
             break;
         case 9:
-            currentDate.innerText = getDoW() + ", September, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("October", 31);
             break;
         case 10:
-            currentDate.innerText = getDoW() + ", October, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("November", 30);
             break;
         case 11:
-            currentDate.innerText = getDoW() + ", November, " + today.getDate() + ", " + today.getFullYear();
-            break;
-        case 12:
-            currentDate.innerText = getDoW() + ", December, " + today.getDate() + ", " + today.getFullYear();
-            break;
-
-        default:
-            currentDate.innerText = getDoW() + ", December, " + today.getDate() + ", " + today.getFullYear();
+            applyDates("December", 31);
             break;
     }
+
+    
 }
+
+function applyDates(month, maxDays){
+    currentDate.innerText = getDoW(false, 0) + ", " + month + ", " + today.getDate() + ", " + today.getFullYear();
+
+    secondDoW.innerText = getDoW(true, 1);
+    secondDate.innerText = calculateDate(maxDays,1);
+
+    thirdDoW.innerText = getDoW(true, 2);
+    thirdDate.innerText = calculateDate(maxDays,2);
+
+    fourthDoW.innerText = getDoW(true, 3);
+    fourthDate.innerText = calculateDate(maxDays,3);
+
+    fifthDoW.innerText = getDoW(true, 4);
+    fifthDate.innerText = calculateDate(maxDays,4);
+
+    sixthDoW.innerText = getDoW(true, 5);
+    sixthDate.innerText = calculateDate(maxDays,5);
+}
+
+function getDoW(abriviated, futureDays) {
+
+    if (abriviated) {
+        if ((today.getDay() + futureDays) > 7) {
+            switch ((today.getDay() + futureDays) - 7) {
+                case 1:
+                    return "Mon"
+
+                case 2:
+                    return "Tues"
+
+                case 3:
+                    return "Wed"
+
+                case 4:
+                    return "Thurs"
+
+                case 5:
+                    return "Fri"
+
+                case 6:
+                    return "Sat"
+
+                case 7:
+                    return "Sun"
+            }
+        }
+        switch ((today.getDay() + futureDays)) {
+            case 1:
+                return "Mon"
+
+            case 2:
+                return "Tues"
+
+            case 3:
+                return "Wed"
+
+            case 4:
+                return "Thurs"
+
+            case 5:
+                return "Fri"
+
+            case 6:
+                return "Sat"
+
+            case 7:
+                return "Sun"
+        }
+    } else {
+        switch (today.getDay()) {
+            case 1:
+                return "Monday"
+
+            case 2:
+                return "Tuesday"
+
+            case 3:
+                return "Wednesday"
+
+            case 4:
+                return "Thursday"
+
+            case 5:
+                return "Friday"
+
+            case 6:
+                return "Saturday"
+
+            case 7:
+                return "Sunday"
+        }
+    }
+
+}
+function calculateDate(maxDays, futureDays){
+    
+    if (today.getDate() + futureDays > maxDays) {
+
+        if (today.getMonth() == 11) {
+            return "1/" + ((today.getDate() + futureDays) - maxDays) + "/" + (today.getFullYear() + 1);
+        } else {
+            return today.getMonth() + 2 + "/" + ((today.getDate() + futureDays) - maxDays) + "/" + today.getFullYear();
+        }
+    } else {
+        return today.getMonth() + 1 + "/" + (today.getDate() + futureDays) + "/" + today.getFullYear();
+    }
+}
+
+
 
 
 //call the function
 
 loadWeather(url_prt1 + citySearch + apiKey);
 initializeFavorates()
-
