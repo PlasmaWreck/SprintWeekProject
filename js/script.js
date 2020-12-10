@@ -1,6 +1,9 @@
 
 
 let weatherInfo;
+
+let bodyID = document.getElementById("bodyID");
+
 let currentMornTemp = document.getElementById("currentMornTemp");
 let currentNoonTemp = document.getElementById("currentNoonTemp");
 let currentNightTemp = document.getElementById("currentNightTemp");
@@ -62,6 +65,7 @@ let favoritesList = document.getElementById("favoritesDropDown");
 let url_prt1 = "http://api.openweathermap.org/data/2.5/weather?q=";
 let citySearch = "stockton";
 let apiKey = "&appid=ceb8e04bf6b69bde44708e25d55841cd&units=imperial";
+let url_OneCall_prt1 = "https://api.openweathermap.org/data/2.5/onecall?lat=";
 
 let today = new Date;
 let currentDoW = 0;
@@ -257,7 +261,7 @@ function loadWeather(url) {
 
 
 //api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
-let url_OneCall_prt1 = "https://api.openweathermap.org/data/2.5/onecall?lat=";
+
 
 function loadWeatherOneCall(url) {
 
@@ -494,43 +498,48 @@ function populateWeatherIcons() {
 
 function getWeatherIcon(arrayPos) {
 
-            switch (weatherInfo[arrayPos].weather[0].icon) {
-                case "01d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-                case "02d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-                case "03d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-                case "04d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-                case "09d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-                case "10d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-                case "11d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-                case "13d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-                case "50d":
-                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
-                    break;
-            }
+    switch (weatherInfo[arrayPos].weather[0].icon) {
+        case "01d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
+        case "02d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
+        case "03d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
+        case "04d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
+        case "09d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
+        case "10d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
+        case "11d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
+        case "13d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
+        case "50d":
+            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            break;
     }
+}
 
+function loadFullPage() {
+    if (today.getHours() <= 8) {
+        bodyID.classList.add("morningBG");
+    } else if (today.getHours() <= 16) {
+        bodyID.classList.add("noonBG");
+    } else {
+        bodyID.classList.add("eveningBG");
+    }
+    loadWeather(url_prt1 + citySearch + apiKey);
+    initializeFavorates();
 
+};
 
-
-
-
-//call the function
-
-loadWeather(url_prt1 + citySearch + apiKey);
-initializeFavorates();
+loadFullPage();
