@@ -503,28 +503,28 @@ function getWeatherIcon(arrayPos) {
             weatherImageArray[arrayPos].src = "./images/clearSky.png"
             break;
         case "02d":
-            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            weatherImageArray[arrayPos].src = "./images/fewClouds.png"
             break;
         case "03d":
-            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            weatherImageArray[arrayPos].src = "./images/scatteredClouds.png"
             break;
         case "04d":
-            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            weatherImageArray[arrayPos].src = "./images/brokenClouds.png"
             break;
         case "09d":
-            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            weatherImageArray[arrayPos].src = "./images/showerRain.png"
             break;
         case "10d":
-            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            weatherImageArray[arrayPos].src = "./images/rain.png"
             break;
         case "11d":
-            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            weatherImageArray[arrayPos].src = "./images/thunderStorm.png"
             break;
         case "13d":
-            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            weatherImageArray[arrayPos].src = "./images/snow.png"
             break;
         case "50d":
-            weatherImageArray[arrayPos].src = "./images/clearSky.png"
+            weatherImageArray[arrayPos].src = "./images/mist.png"
             break;
     }
 }
