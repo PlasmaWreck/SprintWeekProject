@@ -41,6 +41,12 @@ let sixthMornTemp = document.getElementById("sixthMornTemp");
 let sixthNoonTemp = document.getElementById("sixthNoonTemp");
 let sixthNightTemp = document.getElementById("sixthNightTemp");
 
+let weatherImage1 = document.getElementById("weatherImage1");
+let weatherImage2 = document.getElementById("weatherImage2");
+let weatherImage3 = document.getElementById("weatherImage3");
+let weatherImage4 = document.getElementById("weatherImage4");
+let weatherImage5 = document.getElementById("weatherImage5");
+let weatherImageArray = [weatherImage1, weatherImage2, weatherImage3, weatherImage4, weatherImage4, weatherImage5];
 
 
 
@@ -287,7 +293,7 @@ function loadWeatherOneCall(url) {
         sixthNightTemp.innerText = parseInt(weatherInfo[5].temp.night) + "°";
 
 
-        loadDates();
+        load5DayForcast();
 
         if (weatherInfo[0].clouds == 0) {
             currentClouds.innerText = "Clear Skies"
@@ -320,17 +326,17 @@ function loadWeatherOneCall(url) {
 }
 
 
-function loadDates() {
+function load5DayForcast() {
     switch (1) {
         case 0:
-            applyDates("January", 31);            
+            applyDates("January", 31);
             break;
         case 1:
-            if((today.getFullYear() % 4 == 0) && (today.getFullYear() % 100 != 0) || today.getFullYear() % 400 == 0){
+            if ((today.getFullYear() % 4 == 0) && (today.getFullYear() % 100 != 0) || today.getFullYear() % 400 == 0) {
 
                 applyDates("Febuary", 29);
 
-            }else{
+            } else {
 
                 applyDates("Febuary", 28);
 
@@ -367,27 +373,27 @@ function loadDates() {
             applyDates("December", 31);
             break;
     }
+    populateWeatherIcons();
 
-    
 }
 
-function applyDates(month, maxDays){
+function applyDates(month, maxDays) {
     currentDate.innerText = getDoW(false, 0) + ", " + month + ", " + today.getDate() + ", " + today.getFullYear();
 
     secondDoW.innerText = getDoW(true, 1);
-    secondDate.innerText = calculateDate(maxDays,1);
+    secondDate.innerText = calculateDate(maxDays, 1);
 
     thirdDoW.innerText = getDoW(true, 2);
-    thirdDate.innerText = calculateDate(maxDays,2);
+    thirdDate.innerText = calculateDate(maxDays, 2);
 
     fourthDoW.innerText = getDoW(true, 3);
-    fourthDate.innerText = calculateDate(maxDays,3);
+    fourthDate.innerText = calculateDate(maxDays, 3);
 
     fifthDoW.innerText = getDoW(true, 4);
-    fifthDate.innerText = calculateDate(maxDays,4);
+    fifthDate.innerText = calculateDate(maxDays, 4);
 
     sixthDoW.innerText = getDoW(true, 5);
-    sixthDate.innerText = calculateDate(maxDays,5);
+    sixthDate.innerText = calculateDate(maxDays, 5);
 }
 
 function getDoW(abriviated, futureDays) {
@@ -465,8 +471,8 @@ function getDoW(abriviated, futureDays) {
     }
 
 }
-function calculateDate(maxDays, futureDays){
-    
+function calculateDate(maxDays, futureDays) {
+
     if (today.getDate() + futureDays > maxDays) {
 
         if (today.getMonth() == 11) {
@@ -478,6 +484,48 @@ function calculateDate(maxDays, futureDays){
         return today.getMonth() + 1 + "/" + (today.getDate() + futureDays) + "/" + today.getFullYear();
     }
 }
+function populateWeatherIcons() {
+
+    for (i = 0; i < 6; i++) {
+        getWeatherIcon(i);
+    }
+
+}
+
+function getWeatherIcon(arrayPos) {
+
+            switch (weatherInfo[arrayPos].weather[0].icon) {
+                case "01d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+                case "02d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+                case "03d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+                case "04d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+                case "09d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+                case "10d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+                case "11d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+                case "13d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+                case "50d":
+                    weatherImageArray[arrayPos].src = "./images/clearSky.png"
+                    break;
+            }
+    }
+
+
 
 
 
@@ -485,4 +533,4 @@ function calculateDate(maxDays, futureDays){
 //call the function
 
 loadWeather(url_prt1 + citySearch + apiKey);
-initializeFavorates()
+initializeFavorates();

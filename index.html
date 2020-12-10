@@ -30,7 +30,7 @@
         </button>
         <div class="dropdown-menu">
             <ul id="favoritesDropDown" class="setFontSize20">
-            
+
             </ul>
         </div>
 
@@ -68,7 +68,7 @@
 
             <div class="col-1 d-flex mt-3 justify-content-end">
                 <img class="plusMinusSizing pr-1" src="./images/minus.png" alt="minus.png" id="minusButton">
-                <img class="plusMinusSizing pr-0" src="./images/add.png" alt="add.png" id="addButton"> 
+                <img class="plusMinusSizing pr-0" src="./images/add.png" alt="add.png" id="addButton">
             </div>
 
             <div class="col-4">
@@ -138,192 +138,232 @@
         </div>
 
         <div class="row">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col usedBackGround mr-3 p-0 ">
-                        <div class="d-flex flex-row">
-                            <div class="col">
+            <!---------------------------------------------------------------------Box 1 ------------------------------------------------------------->
+            <div class="col px-0 usedBackGround">
+                <div class="row d-flex flex-row px-1">
+                    <div class="col-2">
 
-                                <p class="setFontSize45" id="secondDoW">Tues</p>
+                        <p class="setFontSize40" id="secondDoW"></p>
 
-                            </div>
-                            <div class="col d-flex justify-content-end p-0">
+                    </div>
+                    <div class="col d-flex justify-content-end ">
 
-                                <p class="setFontSize45" id="secondDate">12/8/2020</p>
+                        <p class="setFontSize40" id="secondDate"></p>
 
-                            </div>
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="container">
+                    <div class="row setFontSize45">
+                        <div class="col-4">
+                            <p class="mb-n1"><em>M</em></p>
+                            <p id="secondMornTemp"></p>
                         </div>
-                        <hr class="m-0">
-                        <div class="container">
-                            <div class="row setFontSize45">
-                                <div class="col-4">
-                                    <p class="mb-n1"><em>M</em></p>
-                                    <p id="secondMornTemp"></p>
-                                </div>
-                                <div class="col-4">
-                                    <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
-                                    <p class="d-flex justify-content-center" id="secondNoonTemp"></p>
-                                </div>
-                                <div class="col-4 d-flex flex-column p-0">
-                                    <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
-                                    <p class="d-flex justify-content-end" id="secondNightTemp"></p>
-                                </div>
-                            </div>
+                        <div class="col-4">
+                            <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
+                            <p class="d-flex justify-content-center" id="secondNoonTemp"></p>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <div class="col-4 d-flex flex-column p-0">
+                            <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
+                            <p class="d-flex justify-content-end" id="secondNightTemp"></p>
+                        </div>
 
+
+                        <div class="col d-flex justify-content-center align-items-center mt-4">
+
+                            <img class="weatherIconSize img-fluid" id="weatherImage1" src="" alt="WeatherImage1">
+
+                        </div>
 
 
                     </div>
-                    <div class="col usedBackGround">
-                        <div class="d-flex flex-row">
-                            <div class="col">
+                </div>
 
-                                <p class="setFontSize45" id="thirdDoW">Tues</p>
 
-                            </div>
-                            <div class="col d-flex justify-content-end p-0">
 
-                                <p class="setFontSize45" id="thirdDate">12/8/2020</p>
+            </div>
+            <!---------------------------------------------------------------------Box 2 ------------------------------------------------------------->
+            <div class="col px-0 usedBackGround mx-5">
+                <div class="row d-flex flex-row px-1">
+                    <div class="col-2">
 
-                            </div>
-                        </div>
-                        <hr class="m-0">
-                        <div class="container">
-                            <div class="row setFontSize45">
-                                <div class="col-4">
-                                    <p class="mb-n1"><em>M</em></p>
-                                    <p id="thirdMornTemp"></p>
-                                </div>
-                                <div class="col-4">
-                                    <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
-                                    <p class="d-flex justify-content-center" id="thirdNoonTemp"></p>
-                                </div>
-                                <div class="col-4 d-flex flex-column p-0">
-                                    <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
-                                    <p class="d-flex justify-content-end" id="thirdNightTemp"></p>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="setFontSize40" id="thirdDoW"></p>
+
                     </div>
-                    <div class="col usedBackGround mx-3">
-                        <div class="d-flex flex-row">
-                            <div class="col">
+                    <div class="col d-flex justify-content-end ">
 
-                                <p class="setFontSize45"id="fourthDoW"></p>
+                        <p class="setFontSize40" id="thirdDate"></p>
 
-                            </div>
-                            <div class="col d-flex justify-content-end p-0">
-
-                                <p class="setFontSize45" id="fourthDate"></p>
-
-                            </div>
-                        </div>
-                        <hr class="m-0">
-                        <div class="container">
-                            <div class="row setFontSize45">
-                                <div class="col-4">
-                                    <p class="mb-n1"><em>M</em></p>
-                                    <p id="fourthMornTemp"></p>
-                                </div>
-                                <div class="col-4">
-                                    <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
-                                    <p class="d-flex justify-content-center" id="fourthNoonTemp"></p>
-                                </div>
-                                <div class="col-4 d-flex flex-column p-0">
-                                    <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
-                                    <p class="d-flex justify-content-end" id="fourthNightTemp"></p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col usedBackGround ">
-                        <div class="d-flex flex-row">
-                            <div class="col">
-
-                                <p class="setFontSize45" id="fifthDoW"></p>
-
-                            </div>
-                            <div class="col d-flex justify-content-end p-0">
-
-                                <p class="setFontSize45" id="fifthDate"></p>
-
-                            </div>
+                </div>
+                <hr class="m-0">
+                <div class="container">
+                    <div class="row setFontSize45">
+                        <div class="col-4">
+                            <p class="mb-n1"><em>M</em></p>
+                            <p id="thirdMornTemp"></p>
                         </div>
-                        <hr class="m-0">
-                        <div class="container">
-                            <div class="row setFontSize45">
-                                <div class="col-4">
-                                    <p class="mb-n1"><em>M</em></p>
-                                    <p id="fifthMornTemp"></p>
-                                </div>
-                                <div class="col-4">
-                                    <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
-                                    <p class="d-flex justify-content-center" id="fifthNoonTemp"></p>
-                                </div>
-                                <div class="col-4 d-flex flex-column p-0">
-                                    <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
-                                    <p class="d-flex justify-content-end" id="fifthNightTemp"></p>
-                                </div>
-                            </div>
+                        <div class="col-4">
+                            <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
+                            <p class="d-flex justify-content-center" id="thirdNoonTemp"></p>
                         </div>
+                        <div class="col-4 d-flex flex-column p-0">
+                            <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
+                            <p class="d-flex justify-content-end" id="thirdNightTemp"></p>
+                        </div>
+
+                        <div class="col d-flex justify-content-center align-items-center mt-4">
+
+                            <img class="weatherIconSize img-fluid" id="weatherImage2" src="" alt="WeatherImage1">
+
+                        </div>
+
                     </div>
-                    <div class="col usedBackGround ml-3">
-                        <div class="d-flex flex-row">
-                            <div class="col">
+                </div>
+            </div>
 
-                                <p class="setFontSize45" id="sixthDoW"></p>
+            <!---------------------------------------------------------------------Box 3 ------------------------------------------------------------->
+            <div class="col px-0 usedBackGround">
+                <div class="row d-flex flex-row px-1">
+                    <div class="col-2">
 
-                            </div>
-                            <div class="col d-flex justify-content-end p-0">
+                        <p class="setFontSize40" id="fourthDoW"></p>
 
-                                <p class="setFontSize45" id="sixthDate"></p>
+                    </div>
+                    <div class="col d-flex justify-content-end">
 
-                            </div>
+                        <p class="setFontSize40" id="fourthDate"></p>
+
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="container">
+                    <div class="row setFontSize45">
+
+                        <div class="col-4">
+                            <p class="mb-n1"><em>M</em></p>
+                            <p id="fourthMornTemp"></p>
                         </div>
-                        <hr class="m-0">
-                        <div class="container">
-                            <div class="row setFontSize45">
-                                <div class="col-4">
-                                    <p class="mb-n1"><em>M</em></p>
-                                    <p id="sixthMornTemp"></p>
-                                </div>
-                                <div class="col-4">
-                                    <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
-                                    <p class="d-flex justify-content-center" id="sixthNoonTemp"></p>
-                                </div>
-                                <div class="col-4 d-flex flex-column p-0">
-                                    <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
-                                    <p class="d-flex justify-content-end" id="sixthNightTemp"></p>
-                                </div>
-                            </div>
+
+                        <div class="col-4">
+                            <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
+                            <p class="d-flex justify-content-center" id="fourthNoonTemp"></p>
+                        </div>
+
+                        <div class="col-4 d-flex flex-column p-0">
+                            <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
+                            <p class="d-flex justify-content-end" id="fourthNightTemp"></p>
+                        </div>
+
+                        <div class="col d-flex justify-content-center align-items-center mt-4">
+
+                            <img class="weatherIconSize img-fluid" id="weatherImage3" src="" alt="WeatherImage1">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!---------------------------------------------------------------------Box 4 ------------------------------------------------------------->
+            <div class="col px-0 usedBackGround mx-5">
+                <div class="row d-flex flex-row px-1">
+                    <div class="col-2">
+
+                        <p class="setFontSize40" id="fifthDoW"></p>
+
+                    </div>
+                    <div class="col d-flex justify-content-end">
+
+                        <p class="setFontSize40" id="fifthDate"></p>
+
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="container">
+                    <div class="row setFontSize45">
+                        <div class="col-4">
+                            <p class="mb-n1"><em>M</em></p>
+                            <p id="fifthMornTemp"></p>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
+                            <p class="d-flex justify-content-center" id="fifthNoonTemp"></p>
+                        </div>
+                        <div class="col-4 d-flex flex-column p-0">
+                            <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
+                            <p class="d-flex justify-content-end" id="fifthNightTemp"></p>
+                        </div>
+
+                        <div class="col d-flex justify-content-center align-items-center mt-4 mb-5">
+
+                            <img class="weatherIconSize img-fluid" id="weatherImage4" src="" alt="WeatherImage1">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!---------------------------------------------------------------------Box 5 ------------------------------------------------------------->
+
+            <div class="col px-0 usedBackGround">
+                <div class="row d-flex flex-row px-1">
+                    <div class="col-2">
+
+                        <p class="setFontSize40" id="sixthDoW"></p>
+
+                    </div>
+                    <div class="col d-flex justify-content-end ">
+
+                        <p class="setFontSize40" id="sixthDate"></p>
+
+                    </div>
+                </div>
+                <hr class="m-0">
+                <div class="container">
+                    <div class="row setFontSize45">
+                        <div class="col-4">
+                            <p class="mb-n1"><em>M</em></p>
+                            <p id="sixthMornTemp"></p>
+                        </div>
+                        <div class="col-4">
+                            <p class="mb-n1 d-flex justify-content-center pr-1"><em>A</em></p>
+                            <p class="d-flex justify-content-center" id="sixthNoonTemp"></p>
+                        </div>
+                        <div class="col-4 d-flex flex-column p-0">
+                            <p class="mb-n1 d-flex justify-content-end pr-1"><em>N</em></p>
+                            <p class="d-flex justify-content-end" id="sixthNightTemp"></p>
+                        </div>
+
+                        <div class="col d-flex justify-content-center align-items-center mt-4">
+
+                            <img class="weatherIconSize img-fluid" id="weatherImage5" src="" alt="WeatherImage1">
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class = "pageFooter setFontSize40 d-flex justify-content-end">
+        <p>By TylerRose</p>
+    </div>
 
 
-        <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
 
-        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-            crossorigin="anonymous"></script>
-        <script src="./js/script.js"></script>
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
 
-        <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>

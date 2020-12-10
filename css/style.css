@@ -21,6 +21,11 @@ ul {
     font-style: italic;
 }
 
+.weatherIconSize{
+    height: 200%;
+    width: auto;
+}
+
 
 
 .morningBG{
@@ -77,6 +82,9 @@ background-size: cover;
 .setFontSize35{
     font-size: 35px;
 }
+.setFontSize40{
+    font-size: 40px;
+}
 .setFontSize45{
     font-size: 45px;
 }
@@ -99,4 +107,13 @@ background-size: cover;
 .arrowSize{
     height: 45px;
     width: auto;
+}
+
+.pageFooter{
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 75px;
+    width: 100%;    
 }
