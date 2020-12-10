@@ -109,10 +109,20 @@ background-size: cover;
     width: auto;
 }
 
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.content {
+    flex: 1 0 auto;
+}
+
 .pageFooter{
     background-color: white;
-    position: fixed;
-    left: 0;
+    flex-shrink: 0;
     bottom: 0;
     height: 75px;
     width: 100%;    
