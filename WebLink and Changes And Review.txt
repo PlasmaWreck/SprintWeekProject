@@ -1,0 +1,16 @@
+WebLink: https://chandlerssprintweek2.azurewebsites.net/
+
+Changes:
+- Made some better alignment changes to the current day forcast
+- Adjusted the size of the 5 day forcasts.
+- Changed the favorates button and its size.
+Previously made but undocumented changes
+- Fixed sizing on columns for the 5 day forcast
+- Five day forcast columns adjusted in size to better fit a screen without scrolling
+- Icons added (Was part of the plan from the start)
+
+Client Notes:
+-Perfect Design with minimal-none changes
+-Sizes are aligned and fitted
+-All features work as intended
+-Local storage works as intended

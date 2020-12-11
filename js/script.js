@@ -96,13 +96,9 @@ addFavoriteButton.addEventListener("click", function () {
         amountFavorited++;
 
 
-    } else {
-        console.log("memes3");
     }
 
     initializeFavoriteDrop();
-    console.log(JSON.parse(localStorage.getItem("favorited")));
-    console.log(amountFavorited);
 });
 
 removeFavoriteButton.addEventListener("click", function () {
@@ -123,12 +119,12 @@ removeFavoriteButton.addEventListener("click", function () {
 
             initializeFavorates();
 
-            console.log(JSON.parse(localStorage.getItem("favorited")));
+            
 
 
         }
     }
-    console.log(amountFavorited);
+    
     initializeFavoriteDrop();
 });
 
@@ -177,7 +173,7 @@ function initializeFavoriteDrop() {
     if (amountFavorited >= 1) {
 
         let button0 = document.getElementById("favoriteButton0").addEventListener("click", function () {
-            console.log("eas");
+            
             loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[0] + apiKey);
 
         });
@@ -185,7 +181,7 @@ function initializeFavoriteDrop() {
     if (amountFavorited >= 2) {
 
         let button0 = document.getElementById("favoriteButton1").addEventListener("click", function () {
-            console.log("eas");
+            
             loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[1] + apiKey);
 
         });
@@ -193,7 +189,7 @@ function initializeFavoriteDrop() {
     if (amountFavorited >= 3) {
 
         let button0 = document.getElementById("favoriteButton2").addEventListener("click", function () {
-            console.log("eas");
+            
             loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[2] + apiKey);
 
         });
@@ -201,7 +197,7 @@ function initializeFavoriteDrop() {
     if (amountFavorited >= 4) {
 
         let button0 = document.getElementById("favoriteButton3").addEventListener("click", function () {
-            console.log("eas");
+            
             loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[3] + apiKey);
 
         });
@@ -209,7 +205,7 @@ function initializeFavoriteDrop() {
     if (amountFavorited >= 5) {
 
         let button0 = document.getElementById("favoriteButton4").addEventListener("click", function () {
-            console.log("eas");
+            
             loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[4] + apiKey);
 
         });
@@ -217,7 +213,7 @@ function initializeFavoriteDrop() {
     if (amountFavorited == 6) {
 
         let button0 = document.getElementById("favoriteButton5").addEventListener("click", function () {
-            console.log("eas");
+            
             loadWeather(url_prt1 + JSON.parse(localStorage.getItem("favorited"))[5] + apiKey);
 
         });
@@ -225,7 +221,6 @@ function initializeFavoriteDrop() {
 }
 
 function loadWeather(url) {
-
     let weatherData = fetch(url).then(
         response => response.json()
     ).then(data => {
@@ -269,9 +264,11 @@ function loadWeatherOneCall(url) {
         response => response.json()
     ).then(data => {
         //this is where you parse your data
-
+        console.log(data);
         weatherInfo = data.daily;
-        console.log(weatherInfo);
+        
+        
+
         currentMornTemp.innerText = parseInt(weatherInfo[0].temp.morn) + "°";
         currentNoonTemp.innerText = parseInt(weatherInfo[0].temp.eve) + "°";
         currentNightTemp.innerText = parseInt(weatherInfo[0].temp.night) + "°";

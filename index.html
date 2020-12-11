@@ -16,35 +16,25 @@
 
 <body id="bodyID" class="">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light navSize">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar8"
-            aria-controls="#navbar8" aria-expanded="false" aria-label="Toggle navigation">
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-
         </button>
-        <div class="navbar-collapse collapse" id="#navbar8">
-            <button class="btn btn-light btn  d-flex flex-row align-items-center" type="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-
-                <p class="setFontSize35">Favorites</p>
-
-                <img class="dropDownIconSize mx-2 mb-2" src="./images/dropDownArrow.png" alt="">
-
-            </button>
-            <div class="dropdown-menu">
-                <ul id="favoritesDropDown" class="setFontSize20">
-
-                </ul>
-            </div>
-
-            <ul class="navbar-nav abs-center-x">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">Hidden brand</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
                 <li class="nav-item">
-                    <p class="fontBlack setFontSize70">WeatherVille</p>
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav">
                 <li>
                     <img id="searchButton" class="dropDownIconSize mx-3" src="./images/Search.png" alt="">
                 </li>
@@ -54,9 +44,50 @@
                             <input type="text" class="form-control rounding" id="searchCriteria" aria-describedby=""
                                 placeholder="City, Province">
                         </div>
-                        <form>
+                    <form>
                 </li>
             </ul>
+        </div>
+    </nav>
+
+
+    <!------------------------------------------------------------------------------------------------------------------------------------>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navSize">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar8"
+            aria-controls="#navbar8" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="navbar-collapse collapse" id="#navbar8">
+            <ul>
+                <li>
+                    <button class="btn btn-light btn  d-flex flex-row align-items-center" type="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                        <p class="setFontSize35">Favorites</p>
+
+                        <img class="dropDownIconSize mx-2 mb-2" src="./images/dropDownArrow.png" alt="">
+
+                    </button>
+                    <div class="dropdown-menu">
+                        <ul id="favoritesDropDown" class="setFontSize20">
+
+                        </ul>
+                    </div>
+
+                </li>
+            </ul>
+
+            <ul class="navbar-nav abs-center-x">
+                <li class="nav-item">
+                    <p class="fontBlack setFontSize70">WeatherVille</p>
+                </li>
+            </ul>
+
         </div>
     </nav>
 
