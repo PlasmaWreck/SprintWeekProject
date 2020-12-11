@@ -328,7 +328,7 @@ function loadWeatherOneCall(url) {
 
 
 function load5DayForcast() {
-    switch (1) {
+    switch (today.getMonth()) {
         case 0:
             applyDates("January", 31);
             break;
